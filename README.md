@@ -20,10 +20,10 @@ Let's add some Redux!
 
 
 Things you should do:
-1. Make a reducer to handle the state of the employee list 
-2. `Connect` the components that need to communicate with redux, both dispatch and mapStateToProps
-3. Dispatch actions that trigger reducer functions
-4. Use the payload to alter state
+[X] 1. Make a reducer to handle the state of the employee list 
+[X] 2. `Connect` the components that need to communicate with redux, both dispatch and mapStateToProps
+[] 3. Dispatch actions that trigger reducer functions
+[] 4. Use the payload to alter state
 
 ## Hard Mode
 1. Use `react-router-dom` to pull the form onto its own view. Submitting will still update the list found on the other view.

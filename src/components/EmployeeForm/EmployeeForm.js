@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+
 const emptyEmployeeObject = {
   firstName: '',
   lastName: '',
@@ -20,14 +21,17 @@ class EmployeeForm extends Component {
     this.clearEmployeeFields = this.clearEmployeeFields.bind(this);
   }
 
+  //this looks like magic
   handleChange(event) {
     this.setState({
       [event.target.name]: event.target.value,
     });
   }
 
+
   handleSubmit(event) {
     event.preventDefault();
+    //We could dispatch here
     this.props.addEmployee(this.state);
     this.clearEmployeeFields();
   }

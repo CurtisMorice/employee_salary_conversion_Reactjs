@@ -1,31 +1,33 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React , {Component} from 'react';
 
-const EmployeeList = ({ employeeList, deleteEmployee }) => (
+
+
+class EmployeeList extends Component{
+render() {
+return(
   <ul>
-    {employeeList.map(employee => (
-      <li key={employee.idNumber}>
-        {`${employee.firstName}
-        ${employee.lastName}
-        is the ${employee.jobTitle}
-        and makes ${employee.annualSalary}`}
-        <button onClick={() => deleteEmployee(employee)}>
-          Delete
-        </button>
-      </li>
-    ))}
-  </ul>
+  {this.props.employeeList.map(employee => (
+    <li key={employee.idNumber}>
+      {`${employee.firstName}
+      ${employee.lastName}
+      is the ${employee.jobTitle}
+      and makes ${employee.annualSalary}`}
+      <button onClick={() => this.props.deleteEmployee(employee)}>
+        Delete
+      </button>
+    </li>
+  ))}
+</ul>
+
 );
+}
+}
 
-EmployeeList.propTypes = {
-  employeeList: PropTypes.arrayOf(PropTypes.shape({
-    firstName: String,
-    lastName: String,
-    idNumber: String,
-    jobTitle: String,
-    annualSalary: String,
-  })).isRequired,
-  deleteEmployee: PropTypes.func.isRequired,
-};
+//                         // This is props ... 
+// const EmployeeList = ({ employeeList, deleteEmployee }) => (
+  
+// );
 
-export default EmployeeList;
+
+
+export default EmployeeList ;
